@@ -104,6 +104,59 @@
                 portfolio.appendChild(card);
             });
         }
+        async function guessNumberGame() {
+            const portfolio = document.getElementById('portfolio');
+            const gameContainer = document.createElement('div');
+            gameContainer.className = 'project-card';
+            let targetNumber = Math.floor(Math.random() * 100) + 1;
+            gameContainer.innerHTML = `
+                <h3>Guess the Number Game</h3>
+                <p>Guess a number between 1 and 100!</p>
+                <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100" style="padding: 8px; margin: 5px;">
+                <button onclick="checkGuess()" style="padding: 8px 16px; margin: 5px;">Submit</button>
+                <p id="gameMessage"></p>
+            `;
+            portfolio.appendChild(gameContainer);
+
+            window.checkGuess = function() {
+                const guess = parseInt(document.getElementById('guessInput').value);
+                const message = document.getElementById('gameMessage');
+                if (isNaN(guess) || guess < 1 || guess > 100) {
+                    message.textContent = 'Please enter a number between 1 and 100.';
+                } else if (guess === targetNumber) {
+                    message.textContent = 'Congratulations! You guessed it right!';
+                } else if (guess < targetNumber) {
+                    message.textContent = 'Too low! Try again.';
+                } else {
+                    message.textContent = 'Too high! Try again.';
+                }
+            }
+        }
+
+        async function loadProjects() {
+            try {
+                const response = await fetch('projects.json');
+                const projects = await response.json();
+                const portfolio = document.getElementById('portfolio');
+                if (projects.length === 0) {
+                    guessNumberGame();
+                    return;
+                }
+                projects.forEach(project => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card';
+                    card.innerHTML = `
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <a href="${project.link}" target="_blank">View Project</a>
+                    `;
+                    portfolio.appendChild(card);
+                });
+            } catch (error) {
+                guessNumberGame();
+            }
+        }
+
         loadProjects();
     </script>
 </body>
