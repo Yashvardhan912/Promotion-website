@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Awesome Game Project",
+        "description": "An epic 2D platformer with dynamic levels and stunning visuals.",
+        "link": "https://itch.io/my-awesome-game"
+    },
+    {
+        "title": "Unreal Engine Multiplayer System",
+        "description": "A blueprint-based replicated currency system for multiplayer games.",
+        "link": "https://github.com/myusername/unreal-multiplayer-currency"
+    },
+    {
+        "title": "Portfolio Website",
+        "description": "A stylish and responsive personal website to showcase projects.",
+        "link": "https://github.com/myusername/portfolio-website"
+    }
+]
