@@ -140,7 +140,7 @@
                 const response = await fetch('projects.json');
                 const projects = await response.json();
                 const portfolio = document.getElementById('portfolio');
-                if (projects.length === 0) {
+                if (!projects || projects.length === 0) {
                     guessNumberGame();
                     return;
                 }
