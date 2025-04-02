@@ -123,7 +123,7 @@
 
         async function loadProjects() {
             try {
-                const response = await fetch('projects.json');
+                const response = await fetch('<filename>');
                 const projects = await response.json();
                 const portfolio = document.getElementById('portfolio');
                 if (!projects || projects.length === 0) {
