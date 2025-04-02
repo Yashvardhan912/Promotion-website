@@ -2,16 +2,16 @@
     {
         "title": "Card 1",
         "description": "Website in development.",
-        "link": "www.google.com"
+        "link": "-"
     },
     {
         "title": "Card 2",
         "description": "Website in development.",
-        "link": "www.google.com"
+        "link": "-"
     },
     {
         "title": "Card 3",
         "description": "Website in development.",
-        "link": "www.google.com"
+        "link": "-"
     }
 ]
