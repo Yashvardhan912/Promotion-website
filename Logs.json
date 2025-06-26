@@ -1,0 +1,26 @@
+{
+  "GameDev": [
+    {
+      "title": "FPS Controller",
+      "platform": "on GitHub",
+      "image": "https://via.placeholder.com/220x120?text=FPS+Controller",
+      "link": "https://github.com/Yashvardhan912"
+    }
+  ],
+  "Games": [
+    {
+      "title": "Basket Break",
+      "platform": "on Itch.io",
+      "image": "https://via.placeholder.com/220x120?text=Basket+Break",
+      "link": "https://yashvardhan912.itch.io"
+    }
+  ],
+  "Roblox": [
+    {
+      "title": "Donate Simulator",
+      "platform": "on Roblox",
+      "image": "https://via.placeholder.com/220x120?text=Donate+Simulator",
+      "link": "https://roblox.com"
+    }
+  ]
+}
