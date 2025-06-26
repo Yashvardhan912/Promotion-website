@@ -9,8 +9,8 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
       background-color: #f4f4f4;
+      color: #222;
       text-align: center;
     }
 
@@ -18,7 +18,7 @@
       margin-top: 40px;
     }
 
-    .top-buttons {
+    .button-row {
       margin-top: 20px;
       display: flex;
       justify-content: center;
@@ -34,54 +34,53 @@
       font-size: 1em;
       cursor: pointer;
       transition: all 0.3s ease;
+      min-width: 200px;
     }
 
-    .discord-btn {
-      background-color: #5865F2;
+    .btn.discord {
+      background-color: #222; /* deep black shade */
     }
 
-    .discord-btn:hover {
-      background-color: #4752c4;
+    .btn.discord:hover {
+      background-color: #000;
     }
 
-    .toggle-btn {
-      background-color: #333;
+    .btn.toggle {
+      background-color: #444;
     }
 
-    .toggle-btn:hover {
-      background-color: #555;
+    .btn.toggle:hover {
+      background-color: #222;
     }
 
-    .link-container {
+    .extra-links {
       display: none;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       gap: 15px;
-      margin: 30px auto;
-      width: 90%;
-      max-width: 800px;
+      margin: 20px auto;
+      max-width: 300px;
     }
 
-    .link-container.show {
+    .extra-links.show {
       display: flex;
     }
 
-    .link-container a {
-      background-color: #2c3e50;
+    .extra-links a {
+      background-color: #333;
       color: white;
+      text-decoration: none;
       padding: 12px 24px;
       border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.1em;
+      font-size: 1em;
+      display: inline-block;
+      min-width: 200px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .link-container a:hover {
-      background-color: #34495e;
+    .extra-links a:hover {
+      background-color: #111;
       transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     }
 
     .referral-box {
@@ -91,7 +90,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 90%;
       max-width: 600px;
-      margin: 20px auto;
+      margin: 40px auto;
     }
 
     .referral-input {
@@ -104,18 +103,17 @@
 
     .copy-btn {
       padding: 10px 20px;
-      background-color: #2c3e50;
+      background-color: #222;
       color: white;
       border: none;
       border-radius: 6px;
       margin-top: 10px;
       cursor: pointer;
       font-size: 1em;
-      transition: background-color 0.3s;
     }
 
     .copy-btn:hover {
-      background-color: #34495e;
+      background-color: #000;
     }
 
     .copied-msg {
@@ -129,13 +127,12 @@
 
   <h1>Welcome to My Promotion Hub!</h1>
 
-  <div class="top-buttons">
-    <button class="btn discord-btn" onclick="window.open('https://discord.gg/xk4egYDS', '_blank')">Join Discord</button>
-    <button class="btn toggle-btn" onclick="toggleLinks()">Other Links</button>
+  <div class="button-row">
+    <button class="btn discord" onclick="window.open('https://discord.gg/xk4egYDS', '_blank')">Join Discord</button>
+    <button class="btn toggle" onclick="toggleLinks()">Other Links</button>
   </div>
 
-  <div class="link-container" id="extraLinks">
-    <a href="https://discord.gg/xk4egYDS" target="_blank">Join My Discord Server</a>
+  <div class="extra-links" id="linkGroup">
     <a href="https://yashvardhan912.itch.io" target="_blank">Check Out My Itch.io Games</a>
     <a href="https://github.com/Yashvardhan912" target="_blank">Visit My GitHub</a>
     <a href="https://www.fab.com" target="_blank">Coming Soon on Fab</a>
@@ -158,14 +155,14 @@
 
   <script>
     function toggleLinks() {
-      const container = document.getElementById("extraLinks");
-      container.classList.toggle("show");
+      const links = document.getElementById('linkGroup');
+      links.classList.toggle('show');
     }
 
     function copyReferral() {
       const input = document.getElementById("referralLink");
       input.select();
-      input.setSelectionRange(0, 99999); // For mobile
+      input.setSelectionRange(0, 99999); // Mobile
       document.execCommand("copy");
 
       const msg = document.getElementById("copiedMsg");
