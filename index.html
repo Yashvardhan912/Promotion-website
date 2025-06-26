@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="google-site-verification" content="nwHETX81IaYEozOlfjOi4Z69JaxgctRqRw46Li0N58I" />
   <title>Promotion Hub</title>
   <style>
     body {
@@ -11,17 +10,50 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
-      text-align: center;
       background-color: #f4f4f4;
+      text-align: center;
     }
 
-    h1, h2 {
-      margin: 20px;
-      color: #333;
+    h1 {
+      margin-top: 40px;
+    }
+
+    .top-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .discord-btn {
+      background-color: #5865F2;
+    }
+
+    .discord-btn:hover {
+      background-color: #4752c4;
+    }
+
+    .toggle-btn {
+      background-color: #333;
+    }
+
+    .toggle-btn:hover {
+      background-color: #555;
     }
 
     .link-container {
-      display: flex;
+      display: none;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -31,7 +63,11 @@
       max-width: 800px;
     }
 
-    a {
+    .link-container.show {
+      display: flex;
+    }
+
+    .link-container a {
       background-color: #2c3e50;
       color: white;
       padding: 12px 24px;
@@ -42,7 +78,7 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    a:hover {
+    .link-container a:hover {
       background-color: #34495e;
       transform: translateY(-2px);
       box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
@@ -90,13 +126,19 @@
   </style>
 </head>
 <body>
+
   <h1>Welcome to My Promotion Hub!</h1>
 
-  <div class="link-container">
+  <div class="top-buttons">
+    <button class="btn discord-btn" onclick="window.open('https://discord.gg/xk4egYDS', '_blank')">Join Discord</button>
+    <button class="btn toggle-btn" onclick="toggleLinks()">Other Links</button>
+  </div>
+
+  <div class="link-container" id="extraLinks">
     <a href="https://discord.gg/xk4egYDS" target="_blank">Join My Discord Server</a>
     <a href="https://yashvardhan912.itch.io" target="_blank">Check Out My Itch.io Games</a>
     <a href="https://github.com/Yashvardhan912" target="_blank">Visit My GitHub</a>
-    <a href="https://www.fab.com" target="_blank">Coming soon on Fab</a>
+    <a href="https://www.fab.com" target="_blank">Coming Soon on Fab</a>
   </div>
 
   <h2>Support Me With Microsoft Rewards</h2>
@@ -115,10 +157,15 @@
   </div>
 
   <script>
+    function toggleLinks() {
+      const container = document.getElementById("extraLinks");
+      container.classList.toggle("show");
+    }
+
     function copyReferral() {
       const input = document.getElementById("referralLink");
       input.select();
-      input.setSelectionRange(0, 99999); // Mobile support
+      input.setSelectionRange(0, 99999); // For mobile
       document.execCommand("copy");
 
       const msg = document.getElementById("copiedMsg");
@@ -128,5 +175,6 @@
       }, 2000);
     }
   </script>
+
 </body>
 </html>
