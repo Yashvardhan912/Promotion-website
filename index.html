@@ -81,7 +81,9 @@
 }
 
 h2 {
-  margin-top: 50px;
+  margin: 60px 0 10px 5%;
+  text-align: left;
+  font-size: 1.6em;
 }
 
 .scroller {
@@ -90,8 +92,9 @@ h2 {
   scroll-snap-type: x mandatory;
   gap: 20px;
   padding: 20px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   max-width: 95%;
+  margin-left: 5%;
 }
 
 .scroller::-webkit-scrollbar {
@@ -142,13 +145,13 @@ h2 {
     <a href="https://yashvardhan912.itch.io" target="_blank">Check Out My Itch.io Games</a>
     <a href="https://github.com/Yashvardhan912" target="_blank">Visit My GitHub</a>
     <a href="https://www.fab.com" target="_blank">Coming Soon on Fab</a>
-  </div>  <div id="projects-container"></div>  <script>
+  </div>  <div style="margin-top: 40px;"></div>  <div id="projects-container"></div>  <script>
     function toggleLinks() {
       const links = document.getElementById('linkGroup');
       links.classList.toggle('show');
     }
 
-    const jsonURL = "https://raw.githubusercontent.com/Yashvardhan912/Portfolio/refs/heads/main/Logs.json"; // Replace this with your actual JSON file URL
+    const jsonURL = "https://raw.githubusercontent.com/Yashvardhan912/Portfolio/refs/heads/main/Logs.json";
 
     fetch(jsonURL)
       .then(res => res.json())
