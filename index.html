@@ -1,177 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Promotion Hub</title>
+  <title>My Projects</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
+      background: #f4f4f4;
       color: #222;
-      text-align: center;
-    }
-
-    h1 {
-      margin-top: 40px;
-    }
-
-    .button-row {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 1em;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      min-width: 200px;
-    }
-
-    .btn.discord {
-      background-color: #5865F2;
-    }
-
-    .btn.discord:hover {
-      background-color: #4752c4;
-    }
-
-    .btn.toggle {
-      background-color: #222;
-    }
-
-    .btn.toggle:hover {
-      background-color: #000;
-    }
-
-    .extra-links {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin: 20px auto;
-      max-width: 300px;
-    }
-
-    .extra-links.show {
-      display: flex;
-    }
-
-    .extra-links a {
-      background-color: #222;
-      color: white;
-      text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 1em;
-      display: inline-block;
-      min-width: 200px;
-      transition: all 0.3s ease;
-    }
-
-    .extra-links a:hover {
-      background-color: #000;
-      transform: translateY(-2px);
-    }
-
-    .referral-box {
-      background-color: white;
+      margin: 0;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 90%;
-      max-width: 600px;
-      margin: 40px auto;
-    }
+      text-align: center;
+    }h1 {
+  margin-top: 40px;
+}
 
-    .referral-input {
-      width: 80%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
-    }
+.button-row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
-    .copy-btn {
-      padding: 10px 20px;
-      background-color: #222;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      margin-top: 10px;
-      cursor: pointer;
-      font-size: 1em;
-    }
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
 
-    .copy-btn:hover {
-      background-color: #000;
-    }
+.btn.discord {
+  background-color: #5865F2;
+}
 
-    .copied-msg {
-      margin-top: 10px;
-      font-size: 0.95em;
-      color: green;
-    }
+.btn.discord:hover {
+  background-color: #4752c4;
+}
+
+.btn.toggle {
+  background-color: #222;
+}
+
+.btn.toggle:hover {
+  background-color: #000;
+}
+
+.extra-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 300px;
+}
+
+.extra-links.show {
+  display: flex;
+}
+
+.extra-links a {
+  background-color: #222;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1em;
+  display: inline-block;
+  min-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.extra-links a:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+.scroller {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 220px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  max-width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1em;
+}
+
+.card p {
+  font-size: 0.9em;
+  color: #555;
+}
+
   </style>
 </head>
 <body>
-
-  <h1>Welcome to My Promotion Hub!</h1>
-
-  <div class="button-row">
+  <h1>Welcome to My Promotion Hub!</h1>  <div class="button-row">
     <button class="btn discord" onclick="window.open('https://discord.gg/xk4egYDS', '_blank')">Join Discord</button>
     <button class="btn toggle" onclick="toggleLinks()">Other Links</button>
-  </div>
-
-  <div class="extra-links" id="linkGroup">
+  </div>  <div class="extra-links" id="linkGroup">
     <a href="https://yashvardhan912.itch.io" target="_blank">Check Out My Itch.io Games</a>
     <a href="https://github.com/Yashvardhan912" target="_blank">Visit My GitHub</a>
     <a href="https://www.fab.com" target="_blank">Coming Soon on Fab</a>
-  </div>
-
-  <h2>Support Me With Microsoft Rewards</h2>
-  <div class="referral-box">
-    <p>Use my referral link to sign up and support me!</p>
-    <input
-      class="referral-input"
-      type="text"
-      value="https://rewards.bing.com/welcome?rh=BA3AF6BD&ref=rafsae"
-      id="referralLink"
-      readonly
-    />
-    <br />
-    <button class="copy-btn" onclick="copyReferral()">Copy Referral Link</button>
-    <div class="copied-msg" id="copiedMsg" style="display: none;">Link copied to clipboard!</div>
-  </div>
-
-  <script>
+  </div>  <div id="projects-container"></div>  <script>
     function toggleLinks() {
       const links = document.getElementById('linkGroup');
       links.classList.toggle('show');
     }
 
-    function copyReferral() {
-      const input = document.getElementById("referralLink");
-      input.select();
-      input.setSelectionRange(0, 99999); // Mobile
-      document.execCommand("copy");
+    const jsonURL = "https://yourdomain.com/sample-projects.json"; // Replace this with your actual JSON file URL
 
-      const msg = document.getElementById("copiedMsg");
-      msg.style.display = "block";
-      setTimeout(() => {
-        msg.style.display = "none";
-      }, 2000);
-    }
-  </script>
+    fetch(jsonURL)
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('projects-container');
 
-</body>
+        for (const section in data) {
+          const title = document.createElement('h2');
+          title.textContent = `#${section}`;
+          container.appendChild(title);
+
+          const scrollDiv = document.createElement('div');
+          scrollDiv.className = 'scroller';
+
+          data[section].forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.onclick = () => window.open(item.link, '_blank');
+
+            card.innerHTML = `
+              <img src="${item.image}" alt="${item.title}">
+              <h3>${item.title}</h3>
+              <p>${item.platform}</p>
+            `;
+
+            scrollDiv.appendChild(card);
+          });
+
+          container.appendChild(scrollDiv);
+        }
+      })
+      .catch(error => {
+        document.getElementById('projects-container').innerText = "Failed to load project data.";
+        console.error("Error loading JSON:", error);
+      });
+  </script></body>
 </html>
