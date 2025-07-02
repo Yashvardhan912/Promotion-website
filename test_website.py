@@ -55,8 +55,8 @@ def test_portfolio_website():
     
     # Test 6: Check for main title with gradient text
     main_title = soup.select_one('.hero h1')
-    if main_title and main_title.text.strip() == "YASHVARDHAN":
-        print("✅ Main title 'YASHVARDHAN' is present")
+    if main_title and main_title.text.strip() == "YASH":
+        print("✅ Main title 'YASH' is present")
     else:
         print("❌ Main title is missing or incorrect")
     
